@@ -1,0 +1,14 @@
+{
+  "name": "react_youtube",
+  "version": "1.0.0",
+  "description": "A react tutorial done featuring fundamentals, hooks, context api, react router and custom hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arlan uy",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
