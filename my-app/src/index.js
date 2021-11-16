@@ -8,46 +8,44 @@ const author = "Amelia Hepworth"
 const img2 = "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6228/6228662_so.jpg"
 const title2= "Ready Player One"
 const author2 = "Ernest Cline"
-
-const firstBook = {
+const books = [
+{
+  id: 1,
   img: 'https://treesforlife.org.uk/wp-content/uploads/2019/07/Brown-bear-pixabay.jpg',
   title: "Bear Book",
   author: "Amelia Hepworth",
-}
+},
 
-const secondBook = {
+{
+  id: 2,
   img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6228/6228662_so.jpg",
   title:"Ready Player One",
   author:"Ernest Cline"
-}
+},]
+const names = ['john', 'peter', 'susan'];
+const newNames = names.map((name)=> {
+  return<h1>{name}</h1>;
+})
 function BookList() {
   return (
 
     <section className='booklist'>
       this is a booklist
-      <Book img = {firstBook.img} title = {firstBook.title} author = {firstBook.author}>
-        <p>Complete React Tutorial (inc. Hooks, Context API, React Router, Custom Hooks)
-        Source Code - www.johnsmilga.com</p>
-      </Book>
-      <Book img = {secondBook.img} title = {secondBook.title} author = {secondBook.author}/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
+      {books.map((book)=> {
+        return (
+          <Book key={book.id} {...book}></Book>
+        )
+      })}
     </section>
   );
 }
 
-const Book = ({img, title, author, children}) => {
-  //const {img, title, author} = props
+const Book = (props) => {
+  const {img, title, author} = props
   return <article className="book">
     <img src={img} alt='' height="130" width="120" />
     <h1>{title}</h1>
     <h4>{author}</h4>
-    {children}
   </article>
 }
 
