@@ -25,8 +25,11 @@ function BookList() {
 
     <section className='booklist'>
       this is a booklist
-      <Book img = {firstBook.img} title = {firstBook.title} author = {firstBook.author}/>
-      <Book2 img = {secondBook.img} title = {secondBook.title} author = {secondBook.author}/>
+      <Book img = {firstBook.img} title = {firstBook.title} author = {firstBook.author}>
+        <p>Complete React Tutorial (inc. Hooks, Context API, React Router, Custom Hooks)
+        Source Code - www.johnsmilga.com</p>
+      </Book>
+      <Book img = {secondBook.img} title = {secondBook.title} author = {secondBook.author}/>
       <Book/>
       <Book/>
       <Book/>
@@ -38,42 +41,16 @@ function BookList() {
   );
 }
 
-const Book = (props) => {
-  console.log(props);
+const Book = ({img, title, author, children}) => {
+  //const {img, title, author} = props
   return <article className="book">
-    <Image/>
-    <Title/>
-    <Author/>
-    <img src={props.img} alt='' />
-    <h1>{props.title}</h1>
-    <h4>{props.author}</h4>
+    <img src={img} alt='' height="130" width="120" />
+    <h1>{title}</h1>
+    <h4>{author}</h4>
+    {children}
   </article>
 }
 
-const Book2 = (props) => {
-  console.log(props);
-  return <article className="book">
-    <Image2/>
-    <Title2/>
-    <Author2/>
-    <img src={props.img} alt='' />
-    <h1>{props.title}</h1>
-    <h4>{props.author}</h4>
-  </article>
-}
 
-const Image = ()  => <img src={img} alt="bear book" height="242" width="242" />
-
-const Title = () => <h1>{title}</h1>
-
-
-const Author = () => <h4 style={{color:'#617d98'}}>{author}</h4>
-
-const Image2 = ()  => <img src={img2} alt="bear book" height="242" width="242" />
-
-const Title2 = () => <h1>{title2}</h1>
-
-
-const Author2 = () => <h4 style={{color:'#617d98'}}>{author2}</h4>
 
 ReactDom.render(<BookList/>, document.getElementById('root'))
