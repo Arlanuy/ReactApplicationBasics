@@ -5,14 +5,18 @@ function Greeting() {
   return (
 
     <div>
-      <h1>Hello world</h1>
-      <ul>
-        <li>
-          <a href="#">hello world</a>
-        </li>
-      </ul>
+      <Person/>
+      <Message/>
     </div>
   );
+}
+
+const Person = () => {
+  return <h2>arlan uy</h2>
+}
+
+const Message = () => {
+  return <p>this is the message</p>;
 }
 
 const Greeting2 = () => {
